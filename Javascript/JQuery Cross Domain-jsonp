@@ -1,0 +1,24 @@
+
+$(function(){
+
+    $("#query").button().click(function(){
+        var urls = ""; // Set the URL will be called.
+        console.log(urls);
+        $.ajax({
+            url: urls,
+      /*      headers: {
+                Accept : "application/json; charset=utf-8"
+            }, */
+            dataType: "jsonp",
+        /*    data: {
+                metric:$('input:radio[name=metric]:checked').val(),
+            } */       
+         }).done(function(res) {    
+            
+            // Write the code for successfully receiving cross-domain data
+            
+         }).fail(function(res) {
+            // Write the code for failing to receive cross-domain data
+         });
+    });
+});

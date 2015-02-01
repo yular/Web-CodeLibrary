@@ -1,0 +1,14 @@
+var c=0;
+var t;
+
+function timedCount()
+{
+	//write codes to display the time
+	c=c+1
+	t=setTimeout("timedCount()",1000) //Count seconds.
+}
+
+function stopCount()
+{
+	clearTimeout(t)
+}

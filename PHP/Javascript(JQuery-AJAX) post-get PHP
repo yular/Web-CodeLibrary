@@ -1,0 +1,67 @@
+/*
+* Use an easy example as template
+*/
+
+/*
+* HTML Part
+*/
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Personal Information</title>
+		<script src="js/action.js"></script>
+	</head>
+	<body>
+    <div id="context-container">
+			<label>First Name : </label><input id="fname" type="text"></input>
+			<label>Last Name : </label><input id="lname" type="text"></input>
+			<input type="submit" id="post-submit" value="Post"></input>
+		</div>
+	</body>
+</html>
+
+
+/*
+* Javascript part
+* File name is action.js
+* The file is under the "js" directory
+* Post the firstname and lastname of the person to the PHP file
+*/
+
+$(function(){
+	$("#post-submit").button().click(function(){
+		postInfo();
+	});
+
+});
+
+function postInfo(){
+
+	var fstname=$('#fname').val();
+	var lstname=$('#lname').val();
+
+	$.post("personinfo.php", // Change the URL called if needed
+		{
+		 fname:fstname,
+		 lname:lstname,
+		},
+		function(res){
+			alert("The post name is : "+res);
+    	}
+    );
+}
+
+/*
+* PHP part
+* File name is personinfo.php
+* Receive or Return corresponding information
+*/
+
+<?php
+
+  $fstname=strval($_POST['fname']);
+	$lstname=strval($_POST['lname']);
+  
+  echo "".fstname." ".lstname;
+?>

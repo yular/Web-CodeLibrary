@@ -1,0 +1,40 @@
+
+/*
+* An easy example as template
+* PHP file
+*/
+$conn=mysql_connect("localhost", "root", "root"); // database url, username, password
+
+if(!$conn){
+	die('Could not connect: '.mysql_error());
+}
+
+mysql_select_db("finance_management", $conn); // database name
+
+$sql = "SELECT * From person p where p.fname=\"John\" and p.lname=\"Joe\" ";
+$result = mysql_query($sql, $conn) or die(mysql_error());
+
+if(mysql_num_rows($result) == 0){
+		echo "No Result";
+		return ;
+}else{
+  $row=mysql_fetch_assoc($result);
+	$res=$row["email"];
+	echo $res;
+}
+
+$sql = "INSERT INTO person (id, email,  fname, lname) 
+VALUES (\"001\", \"john@mail.com\",\"John\", \"Joe\")";
+mysql_query($sql, $conn) or die(mysql_error());
+
+$sql = "UPDATE person
+set fname=\"Green\", lname=\"Jackson\" where id=\"002\";  
+mysql_query($sql, $conn) or die(mysql_error());
+
+$sql = "DELETE FROM person  
+where id=\"003\" "; 
+mysql_query($sql, $conn) or die(mysql_error());
+
+mysql_close($conn);
+
+

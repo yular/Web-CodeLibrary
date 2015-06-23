@@ -15,10 +15,10 @@ $sql = "SELECT * From person p where p.fname=\"John\" and p.lname=\"Joe\" ";
 $result = mysql_query($sql, $conn) or die(mysql_error());
 
 if(mysql_num_rows($result) == 0){
-		echo "No Result";
-		return ;
+	echo "No Result";
+	return ;
 }else{
-  $row=mysql_fetch_assoc($result);
+	$row=mysql_fetch_assoc($result);
 	$res=$row["email"];
 	echo $res;
 }

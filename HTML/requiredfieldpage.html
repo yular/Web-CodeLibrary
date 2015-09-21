@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Required Feild Page</title>
+	<style type="text/css">
+		.form-group, .control-label:after{
+			content: "*";
+			color: red;
+		}
+	</style>
+</head>
+	<div class="container">
+		<div class="row">
+			<label class="control-label" for="name">Name</label>
+			<input class="text-span" placeholder="name" required="required">
+		</div>
+
+		<br>
+
+		<div class="row">
+			<label class="control-label" for="sex">Sex</label>
+			<select class="form-control">
+				<option value="man" selected="selected">man</option>
+				<option value="woman">woman</option>
+			</select>
+		</div>
+	</div>
+</html>

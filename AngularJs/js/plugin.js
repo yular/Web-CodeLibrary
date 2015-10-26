@@ -1,4 +1,5 @@
 (function() {
 
+ $("#inputArea").linedtextarea();
 
-});
+}());

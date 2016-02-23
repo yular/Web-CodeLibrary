@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>Click the button to display a confirm box.</p>
+    <button onclick="popupWindow()">Try it</button>
+    <p id="demo"></p>
+    <script>
+    function popupWindow() {
+        var x;
+        if (confirm("Press a button!") == true) {
+            x = "Pressed OK!";
+        } else {
+            x = "Pressed Cancel!";
+        }
+        document.getElementById("demo").innerHTML = x;
+    }
+    </script>
+  </body>
+</html>

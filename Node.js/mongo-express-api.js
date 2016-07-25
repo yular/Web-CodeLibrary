@@ -28,7 +28,7 @@ MongoClient.connect(mongoUrl, function (err, db) {
         if (!req.param('_id'))
             res.status(400).send("Please send a proper id");
         else {
-            db.collection('iteminfo').findOne({_id: id}, function(err, doc){
+            db.collection('iteminfo').findOne({_id: parseInt(id)}, function(err, doc){
             if (doc != null)
                 callback(doc);
             else
